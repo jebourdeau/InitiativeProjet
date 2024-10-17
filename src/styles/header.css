@@ -1,0 +1,21 @@
+.App-header{
+    /* background-color:#e31766 ; */
+    /* background-: #71c920; */
+    background-color: #e7ffcc;
+    align-items: center;
+    color: black;
+}
+.initiative{
+    max-height: 150px;
+    margin-top: 30px;
+}
+
+.navbar{
+justify-content: flex-end;
+    background-color: #e7ffcc;
+}
+.match{
+    max-height: 200px;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+}

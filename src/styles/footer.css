@@ -1,0 +1,11 @@
+.logo {
+    display: flex;
+    max-height: 50px;
+    margin-right: 20px;
+    margin-left: auto;
+    margin-bottom: 20px;
+}
+.footer-content{
+    margin-top: 10px;
+    align-content: space-between;
+}
