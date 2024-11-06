@@ -5,12 +5,14 @@ import initiativep.model.Projet;
 import initiativep.model.User;
 import initiativep.repository.ProjetRepository;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 
 import initiativep.repository.ParrainRepository;
 import initiativep.repository.UserRepository;
 import initiativep.services.ProjetService;
+import org.mockito.junit.jupiter.MockitoExtension;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import java.util.Optional;
@@ -19,7 +21,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.when;
 
-@SpringBootTest
+@ExtendWith(MockitoExtension.class)
 public class InitiativeTest {
 
     @Mock
@@ -28,7 +30,6 @@ public class InitiativeTest {
     private ParrainRepository parrainRepository;
     @Mock
     private ProjetRepository projetRepository;
-
     @InjectMocks
     private ProjetService projetService;
 
@@ -57,22 +58,22 @@ public class InitiativeTest {
         when(projetRepository.save(any(Projet.class))).thenReturn(projetFromDB);
 
         // troisieme paramètre
-        long idParrain = 4L;
+//        long idParrain = 4L;
 
-        // Mock parrain
-        Parrain parrain = Parrain.builder()
-                .id(4L)
-                .name("état")
-                .entreprise("en déficite")
-                .build();
-
-        when(parrainRepository.save(any(Parrain.class))).thenReturn(parrain);
+//        // Mock parrain
+//        Parrain parrain = Parrain.builder()
+//                .id(4L)
+//                .name("état")
+//                .entreprise("en déficite")
+//                .build();
+//
+//        when(parrainRepository.save(any(Parrain.class))).thenReturn(parrain);
 
         // Execution du code de l'app
         Projet projet = projetService.creationProjet(idUser, nomProjet);
 
         assertEquals(projet.getOwner().getUsername(), user.getUsername());
-        assertEquals(projet.getNom(), nomProjet);
+        assertEquals(projet.getName(), nomProjet);
 
     }
 

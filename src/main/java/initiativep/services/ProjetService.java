@@ -30,7 +30,7 @@ public class ProjetService {
 
         Projet projet = Projet.builder()
                 .owner(user)
-                .nom(nomProjet)
+                .name(nomProjet)
                 .membres(membres)
                 .build();
 
