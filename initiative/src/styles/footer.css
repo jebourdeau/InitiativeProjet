@@ -1,0 +1,38 @@
+.footer-content {
+text-align: center;
+padding: 1rem;
+background-color: #e7ffcc;
+color: black;
+}
+
+.footer-content a {
+    color: gray;
+    text-decoration: none;
+    align-items: center;
+    gap: 0.5rem;
+    margin: 0.5rem 0;
+    flex-direction: column;
+}
+
+.favicon {
+    font-size: 2rem;
+}
+
+.footer-content a:hover .favicon {
+    color: #4267B2;
+    /* Couleur de Facebook */
+}
+
+.logo {
+    margin-top: 1rem;
+    width: 150px;
+}
+.réseau {
+    color: #71c920;
+    padding: 5px;
+    margin: 5px;
+    border-style: solid;
+    border-radius: 10%;
+    background-color: #656664bb;
+    flex-direction: row;
+}

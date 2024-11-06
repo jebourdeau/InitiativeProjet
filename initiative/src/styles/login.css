@@ -1,0 +1,17 @@
+.login-case{
+    display: flex;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10%;
+    margin: auto;
+    margin-top: 20px;
+    padding-bottom: 10px;
+    padding-top: 10px;
+}
+.button_submit{
+    background-color: #e31766;
+}
+.button_submit:hover {
+    background-color: #71c920;
+}
