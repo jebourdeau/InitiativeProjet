@@ -20,11 +20,9 @@ public class User {
         @Id
         @GeneratedValue
         private Long id;
-        @NonNull
+
         private String username;
-        @NonNull
         private String email;
         private String password;
-
 
 }

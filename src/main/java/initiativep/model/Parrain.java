@@ -22,7 +22,6 @@ public class Parrain {
     private String name;
     private String entreprise;
 
-    @NonNull
     private String email;
     private String password;
     
