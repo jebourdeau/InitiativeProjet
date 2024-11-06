@@ -1,0 +1,17 @@
+spring:
+  application:
+    name: InitiativeNA
+  datasource:
+    url: jdbc:postgresql://localhost:5432/InitiativeNa
+    username: postgres
+    password: postgres
+  jpa:
+    database: postgresql
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+springdoc:
+  api-docs:
+    path: /api-docs
+  swagger-ui:
+    path: /docs
