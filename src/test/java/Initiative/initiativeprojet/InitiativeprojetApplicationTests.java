@@ -8,6 +8,7 @@ class InitiativeprojetApplicationTests {
 
 	@Test
 	void contextLoads() {
+
 	}
 
 }
