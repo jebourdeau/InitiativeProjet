@@ -58,16 +58,16 @@ public class InitiativeTest {
         when(projetRepository.save(any(Projet.class))).thenReturn(projetFromDB);
 
         // troisieme paramètre
-        long idParrain = 4L;
+//        long idParrain = 4L;
 
-        // Mock parrain
-        Parrain parrain = Parrain.builder()
-                .id(4L)
-                .name("état")
-                .entreprise("en déficite")
-                .build();
-
-        when(parrainRepository.save(any(Parrain.class))).thenReturn(parrain);
+//        // Mock parrain
+//        Parrain parrain = Parrain.builder()
+//                .id(4L)
+//                .name("état")
+//                .entreprise("en déficite")
+//                .build();
+//
+//        when(parrainRepository.save(any(Parrain.class))).thenReturn(parrain);
 
         // Execution du code de l'app
         Projet projet = projetService.creationProjet(idUser, nomProjet);
