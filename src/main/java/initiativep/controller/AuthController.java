@@ -1,7 +1,9 @@
 package initiativep.controller;
 
 import initiativep.dto.ProjetDto;
+import initiativep.dto.UserDto;
 import initiativep.model.Projet;
+import initiativep.model.User;
 import initiativep.services.ProjetService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -26,6 +28,11 @@ public class AuthController {
     private final ProjetService projetService;
 
 
+    @PostMapping
+    public ResponseEntity<User> createUser(@RequestBody UserDto userDTO) {
+        User user = userService.createUser(userDTO);
+        return new ResponseEntity<>(user, HttpStatus.CREATED);
+    }
 
     @PostMapping
     public ResponseEntity<Projet> createProjet(@RequestBody ProjetDto projetDTO) {
@@ -37,4 +44,5 @@ public class AuthController {
         this.parrainService = parrainService;
         this.projetService = projetService;
     }
+
 }

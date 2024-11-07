@@ -21,8 +21,4 @@ public class Projet {
     private User owner;
     @ManyToMany
     private List<User> membres;
-    // Getters et setters
-
-
-
 }

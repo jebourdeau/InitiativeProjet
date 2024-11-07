@@ -13,6 +13,7 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
+import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 
 @Configuration
 @EnableWebSecurity
@@ -26,8 +27,16 @@ public class SpringSecurity extends WebSecurityConfiguration {
         this.passwordEncoder = passwordEncoder;
         this.userDetailsService = userDetailsService;
     }
+//    @Autowired
+//    private JwtAuthenticationEntryPoint unauthorizedHandler;
+//
+//    @Bean
+//    public JwtAuthenticationFilter jwtAuthenticationFilter() {
+//        return new JwtAuthenticationFilter();
+//    }
+
     @Bean
-    public  static PasswordEncoder passwordEncoder(){
+    public static PasswordEncoder passwordEncoder(){
         return  new BCryptPasswordEncoder();
     }
     @Bean
@@ -47,21 +56,27 @@ public class SpringSecurity extends WebSecurityConfiguration {
                 .permitAll())
         .build();
     }
-    @Override
-    protected void configure(HttpSecurity http) throws Exception {
-        http.csrf().disable()
-                .authorizeRequests()
-                .antMatchers("/api/auth/**").permitAll()
-                .anyRequest().authenticated()
-                .and()
-                .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);
-    }
+//    @Override
+//    protected void configure(HttpSecurity http) throws Exception {
+//        http.cors().and().csrf().disable()
+//                .authorizeRequests()
+//                .antMatchers("/api/auth/**").permitAll()
+//                .antMatchers("/api/admin/**").hasRole("ADMIN")
+//                .antMatchers("/api/parrain/**").hasRole("PARRAIN")
+//                .antMatchers("/api/user/**").hasRole("USER")
+//                .anyRequest().authenticated()
+//                .and()
+//                .exceptionHandling().authenticationEntryPoint(unauthorizedHandler)
+//                .and()
+//                .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);
+//
+//        http.addFilterBefore(jwtAuthenticationFilter(), UsernamePasswordAuthenticationFilter.class);
+//    }
 
-    @Override
-    protected void configure(AuthenticationManagerBuilder auth) throws Exception {
-        // Configuration de l'authentification
-    }
-
+//    @Override
+//    protected void configureAuth(AuthenticationManagerBuilder auth) throws Exception {
+//        // Configuration de l'authentification
+//    }
     @Autowired
     public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception{
         auth
