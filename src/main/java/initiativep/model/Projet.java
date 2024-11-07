@@ -14,13 +14,15 @@ import java.util.List;
 public class Projet {
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private List<User> membres;
-    private String name;
-
-    @ManyToMany
+    private String nom;
+    @ManyToOne
     private User owner;
+    @ManyToMany
+    private List<User> membres;
+    // Getters et setters
+
 
 
 }
