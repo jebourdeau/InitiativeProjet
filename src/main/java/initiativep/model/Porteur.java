@@ -1,34 +1,30 @@
 package initiativep.model;
 
 import jakarta.persistence.*;
-import lombok.*;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
-@Getter
 @Entity
-@Setter
 @Data
 @Builder
-@AllArgsConstructor
 @NoArgsConstructor
-@Table(name= "parrains")
-public class Parrain extends User{
+@AllArgsConstructor
+public class Porteur extends User{
 
-    @GeneratedValue
-    private String entreprise;
 
     @ManyToMany(fetch = FetchType.EAGER)
     @JoinTable(
-            name = "parrain_roles",
-            joinColumns = @JoinColumn(name ="parrain_id"),
+            name = "porteur_roles",
+            joinColumns = @JoinColumn(name ="porteur_id"),
             inverseJoinColumns = @JoinColumn(name = "role_id")
     )
     private Set<Role> roles = new HashSet<>();
-    
-    private List<SecteurActivite> reseaux;
 
-
+    private SecteurActivite reseaux;
 }
