@@ -26,8 +26,8 @@ return (
         <span className="réseau">Linkedin</span>
         </a>
     </div>
-    <img src={logo} alt="initiative" className="logo" />
-        <p>© 2024 Initiative Deux Sèvres</p>
+    <a href="https://www.initiative-nouvelleaquitaine.fr/"><img src={logo} alt="initiative" className="logo"/></a>
+        <p>© 2024 Initiative Deux Sèvres &hearts; </p>
     </footer>
 </div>
 );

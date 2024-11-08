@@ -15,6 +15,7 @@ import java.util.Set;
 @Data
 @Builder
 @Table(name = "users")
+@Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
 public class User {
 
         @Id

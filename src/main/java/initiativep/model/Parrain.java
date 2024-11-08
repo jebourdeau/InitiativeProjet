@@ -11,13 +11,11 @@ import java.util.Set;
 @Entity
 @Setter
 @Data
-@Builder
 @AllArgsConstructor
 @NoArgsConstructor
 @Table(name= "parrains")
 public class Parrain extends User{
 
-    @GeneratedValue
     private String entreprise;
 
     @ManyToMany(fetch = FetchType.EAGER)
@@ -27,7 +25,7 @@ public class Parrain extends User{
             inverseJoinColumns = @JoinColumn(name = "role_id")
     )
     private Set<Role> roles = new HashSet<>();
-    
+    @ManyToMany
     private List<SecteurActivite> reseaux;
 
 

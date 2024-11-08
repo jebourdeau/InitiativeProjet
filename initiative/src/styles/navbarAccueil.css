@@ -4,14 +4,8 @@
     align-items: center;
     padding: 1rem;
     background-color: #e31766;
-    color: white;
+    color: yellow;
     width: 100%;
-    height: 30px;
-}
-
-.burger-menu {
-    cursor: pointer;
-    font-size: 1.5rem;
 }
 
 .nav-links {
@@ -20,17 +14,72 @@
     gap: 1rem;
 }
 
-
-
 .nav-links a {
-    color: white;
+    color: yellow;
     text-decoration: none;
+    transition: color 0.3s;
 }
-.login{
+
+.nav-links a:hover {
+    color: #71c920;
+}
+
+.dropdown-toggle {
+    cursor: pointer;
+    color: yellow;
+    transition: color 0.3s;
+}
+
+.dropdown-toggle:hover {
+    color: #71c920;
+}
+
+.login {
     display: flex;
-    background-color: #e31766;
     align-items: center;
-    color : white;
-    margin-right: 10px;
+    color: yellow;
     margin-left: auto;
+}
+
+.login a {
+    color: yellow;
+    text-decoration: none;
+    margin-left: 10px;
+    transition: color 0.3s;
+}
+
+.login a:hover {
+    color: #71c920;
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: 50px;
+    left: 0;
+    background-color: rgb(134, 130, 130);
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.dropdown-menu ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.dropdown-menu li {
+    padding: 8px 16px;
+}
+
+.dropdown-menu li a {
+    color: yellow;
+    text-decoration: none;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.dropdown-menu li a:hover {
+    background-color: #71c920;
+    color: #e31766;
 }
