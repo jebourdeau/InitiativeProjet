@@ -27,7 +27,7 @@ return (
         </a>
     </div>
     <a href="https://www.initiative-nouvelleaquitaine.fr/"><img src={logo} alt="initiative" className="logo"/></a>
-        <p>© 2024 Initiative Deux Sèvres &hearts; </p>
+        <p>© 2024 Initiative Deux Sèvres, Simplon &hearts; </p>
     </footer>
 </div>
 );

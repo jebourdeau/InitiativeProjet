@@ -6,7 +6,6 @@ import { NavbarAccueil } from "./navbarAccueil";
 
 
 const Header = () => {
-
     return (
     <header className="App-header">
         <img src={logo} className="initiative" alt="initiative" title="Initiative Nouvelle Aquitaine" />

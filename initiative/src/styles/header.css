@@ -1,11 +1,12 @@
 
 .initiative{
-    max-height: 150px;
+    max-height: 120px;
     margin-top: 30px;
+    padding-bottom: 10px;
 }
 
 .match{
-    max-height: 200px;
+    max-height: 150px;
     margin-bottom: 20px;
     padding-bottom: 20px;
 }

@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 import { FaTools, FaCamera, FaCalendarAlt } from 'react-icons/fa';
 import "../../../styles/boitesoutils.css";
 
-const Boite_à_outils = () => {
+const BoiteOutils = () => {
     return (
         <div className="sidebar">
             <ul>
@@ -26,4 +26,4 @@ const Boite_à_outils = () => {
     );
 };
 
-export default Boite_à_outils;
+export default BoiteOutils;
