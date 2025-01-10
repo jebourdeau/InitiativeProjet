@@ -3,9 +3,13 @@
     justify-content: space-between;
     align-items: center;
     padding: 2px;
-    background-color: #e31766;
-    color: yellow;
+    background-color: grey;
+    color: black;
     width: 100%;
+}
+.navbar:hover{
+    background-color: #e31766;
+    
 }
 
 .nav-links {
@@ -32,7 +36,7 @@
 
 .dropdown-toggle {
     cursor: pointer;
-    color: yellow;
+    color: black;
     background: none;
     border: none;
     font-size: 1rem;
@@ -96,7 +100,7 @@
 }
 
 .backhome {
-    background-color: #500dbb;
+    background-color: #72C91F;
     color: white;
     border: none;
     padding: 0.5rem 1rem;

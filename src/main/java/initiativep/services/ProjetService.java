@@ -1,5 +1,8 @@
 package initiativep.services;
 
+import initiativep.dto.ParrainDto;
+import initiativep.dto.ProjetDto;
+import initiativep.model.Parrain;
 import initiativep.model.Projet;
 import initiativep.model.User;
 import initiativep.repository.ProjetRepository;
@@ -23,7 +26,9 @@ public class ProjetService {
     public Projet creationProjet(long idUser, String nomProjet) {
         return this.creationProjet(idUser, nomProjet, new ArrayList<>());
     }
-
+    public void deleteProjet(Long id) {
+        projetRepository.deleteById(id);
+    }
     public Projet creationProjet(long idUser, String nomProjet, List<User> membres)
             throws NoSuchElementException {
         User user = userRepository.findById(idUser).orElseThrow();
@@ -34,6 +39,12 @@ public class ProjetService {
                 .membres(membres)
                 .build();
 
+        return projetRepository.save(projet);
+    }
+    public Projet updateProjet(Long id, ProjetDto projetDto){
+        Projet projet = projetRepository.getReferenceById(id);
+        projet.setId(projetDto.getIdUser());
+        projet.setName(projet.getName());
         return projetRepository.save(projet);
     }
 }

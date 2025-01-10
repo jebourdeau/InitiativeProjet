@@ -30,7 +30,6 @@ export const NavbarAccueil = () => {
                 ☰
             </button>
             <ul className={`nav-links ${isOpen ? 'open' : ''}`}>
-                <li><Link to="/" title="Accueil">Accueil</Link></li>
                 <li>
                     <button className="dropdown-toggle" onClick={toggleMessagerie}>Messagerie</button>
                     <ul className={`dropdown ${isMessagerieOpen ? 'open' : ''}`}>

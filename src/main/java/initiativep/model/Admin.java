@@ -15,7 +15,6 @@ import java.util.Set;
 @Table(name = "Admins")
 public class Admin extends User {
 
-
         @ManyToMany(fetch = FetchType.EAGER)
         @JoinTable(
                 name = "user_roles",

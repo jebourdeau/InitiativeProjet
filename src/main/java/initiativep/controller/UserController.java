@@ -21,13 +21,6 @@ public class UserController {
 
     @Autowired
     private UserService userService;
-
-    @PostMapping("/create")
-    public ResponseEntity<User> createUser(@RequestBody UserDto userDTO) {
-        User user = userService.createUser(userDTO);
-        return new ResponseEntity<>(user, HttpStatus.CREATED);
-    }
-
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> deleteUser(@PathVariable Long id) {
         userService.deleteUser(id);
@@ -38,7 +31,6 @@ public class UserController {
     public ResponseEntity<User> updateUser(@PathVariable Long id, @RequestBody UserDto userDTO) {
         User updatedUser = userService.updateUser(id, userDTO);
         return new ResponseEntity<>(updatedUser, HttpStatus.OK);
-
     }
 }
 

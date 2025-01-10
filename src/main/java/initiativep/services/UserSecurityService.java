@@ -27,5 +27,4 @@ public class UserSecurityService implements UserDetailsService {
                 .authorities(new ArrayList<>())
                 .build();
     }
-
 }

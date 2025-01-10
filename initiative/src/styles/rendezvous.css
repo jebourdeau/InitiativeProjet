@@ -10,7 +10,6 @@
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-/* Style pour les jours */
 .react-calendar__tile {
     padding: 10px;
     background: none;
@@ -36,7 +35,6 @@
     color: white;
 }
 
-/* Style pour les en-têtes */
 .react-calendar__navigation button {
     color: #3f51b5;
     min-width: 44px;
@@ -50,7 +48,6 @@
     background-color: #e0e0e0;
 }
 
-/* Style pour les jours de la semaine */
 .react-calendar__month-view__weekdays {
     text-align: center;
     font-weight: bold;

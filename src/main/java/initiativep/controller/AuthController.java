@@ -14,8 +14,6 @@ import initiativep.services.UserService;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
-
-
 @Controller
 @RestController
 public class AuthController {
@@ -23,14 +21,11 @@ public class AuthController {
     private final UserService userService;
     @Autowired
     private final ProjetService projetService;
-
-
     @PostMapping
     public ResponseEntity<User> createUser(@RequestBody UserDto userDTO) {
         User user = userService.createUser(userDTO);
         return new ResponseEntity<>(user, HttpStatus.CREATED);
     }
-
     @PostMapping
     public ResponseEntity<Projet> createProjet(@RequestBody ProjetDto projetDTO) {
         Projet projet = projetService.creationProjet(projetDTO.getIdUser(), projetDTO.getNomProjet(), projetDTO.getMembres());
@@ -40,5 +35,4 @@ public class AuthController {
         this.userService = userService;
         this.projetService = projetService;
     }
-
 }

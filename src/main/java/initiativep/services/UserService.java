@@ -11,6 +11,7 @@ import java.util.Collections;
 import java.util.NoSuchElementException;
 
 
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
@@ -36,7 +37,7 @@ public class UserService{
     }
 
     public void deleteUser(Long id) {
-        userRepository.findById(id);
+        userRepository.deleteById(id);
     }
 
     public User updateUser(Long id, UserDto userDTO) {
@@ -47,7 +48,4 @@ public class UserService{
         return userRepository.save(user);
     }
 
-    public void findByUsername(String username) {
-        userRepository.findByUsername(username) ;
-    }
 }

@@ -12,6 +12,7 @@ import Rendezvous from './components/pages/boitesOutils/rendezvous';
 import NotFound from './components/pages/notFound';
 import { Registeruser } from './components/userpages/registeruser';
 import { Loginuser } from './components/userpages/loginuser';
+import { Body } from './components/structure/body';
 
 
 
@@ -30,6 +31,9 @@ function App() {
         <Route path="/photos" element={<Photos/>} />
         <Route path="/rendezvous" element={<Rendezvous/>} />
     </Routes>
+    <Body>
+      
+    </Body>
     <Footer/>
   </BrowserRouter>
   );
