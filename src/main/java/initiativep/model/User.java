@@ -23,7 +23,10 @@ public class User {
         private Long id;
 
         private String username;
+        private int age;
         private String email;
+        private String role;
+        private String projet;
         private String password;
 
         @ManyToMany(fetch = FetchType.EAGER)
