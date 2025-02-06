@@ -3,7 +3,6 @@ import './App.css';
 import Header from './components/structure/header';
 import Footer from './components/structure/footer';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import { Contact } from './components/pages/contact';
 import { Apropos } from './components/pages/apropos';
 import Rendezvous from './components/pages/boitesOutils/rendezvous';
 import NotFound from './components/pages/notFound';
@@ -12,6 +11,7 @@ import { Loginuser } from './components/userpages/loginuser';
 import { Body } from './components/structure/body';
 import { Messagerie } from './components/pages/boitesOutils/messagerie';
 import Profils  from './components/pages/boitesOutils/profils';
+import { UserList } from './components/userpages/userList';
 
 function App() {
   return (
@@ -20,7 +20,7 @@ function App() {
     <Body/>
     <Routes>
         <Route path="/notfound" element={<NotFound/>} />
-        <Route path="/contact" element={<Contact/>} />
+        <Route path="/users" element={<UserList/>} />
         <Route path="/apropos" element={<Apropos/>} />
         <Route path="/login" element={<Loginuser/>} />
         <Route path="/register" element={<Registeruser/>} />
