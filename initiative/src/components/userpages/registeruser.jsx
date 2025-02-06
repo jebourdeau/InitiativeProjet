@@ -1,10 +1,64 @@
 import "../../styles/login.css";
+import { createUser } from "../../services/userService";
+import { useState } from "react";
 
 export const Registeruser = () => {
+    const [user, setUser]=useState({
+        username:'',
+        age:"",
+        role: "",
+        projet:"",
+        email:"",
+        password:""
+    });
+    const handleChange = (e) =>{
+        const{username, value} = e.target;
+        setUser({
+            ...user,
+            [username]:value
+        })
+    }
+    const handleSubmit = async (e)=>{
+        e.preventDefault();
+        try {
+            const newUser = await createUser(user);
+            console.log("User Created:", newUser);
+        } catch (error) {
+            console.error("Error Createing user", error);
+        }
+    }
+
     return (
         <div>
             <h3>Vous n'avez pas de compte, créez-le maintenant</h3>
-            <form className="login-case">
+            <form onSubmit={handleSubmit} className="login-case">
+                <label htmlFor="">
+                    Nom:
+                    <input type="text" name="username" value={user.username} onChange={handleChange} required/>
+                </label>
+                <label>
+                    Âge:
+                    <input type="number" name="age" value={user.age} onChange={handleChange} required/>
+                </label>
+                <label>
+                    Email:
+                    <input type="email" name="email" value={user.email} onChange={handleChange} required/>
+                </label>
+                <label>
+                    Role:
+                    <input type="text" name="role" value={user.role} onChange={handleChange} required/>
+                </label>
+                <label>
+                    Projet:
+                    <input type="text" name="projet" value={user.projet} onChange={handleChange} required/>
+                </label>
+                <label>
+                    Password:
+                    <input type="text" name="password" value={user.password} onChange={handleChange} required/>
+                </label>
+                <button type="submit">S'inscrire</button>
+            </form>
+            {/* <form className="login-case">
                 <label title="Nom">Nom</label>
                 <input type='text' name='Nom' placeholder='Nom' />
                 <label title="Prenom">Prénom</label>
@@ -28,9 +82,8 @@ export const Registeruser = () => {
                         Parrain
                     </label>
                 </div>
-
                 <input type='submit' className='button_submit' />
-            </form>
+            </form> */}
         </div>
     );
 };
