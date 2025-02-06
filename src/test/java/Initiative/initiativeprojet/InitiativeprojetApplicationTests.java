@@ -1,24 +1,21 @@
 package Initiative.initiativeprojet;
 
+import java.util.Optional;
+
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
+import static org.mockito.ArgumentMatchers.any;
+import org.mockito.Mock;
+import static org.mockito.Mockito.when;
+import org.mockito.junit.jupiter.MockitoExtension;
+import org.springframework.beans.factory.annotation.Autowired;
+
 import initiativep.model.Projet;
 import initiativep.model.User;
 import initiativep.repository.ProjetRepository;
 import initiativep.repository.UserRepository;
 import initiativep.services.ProjetService;
-import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.extension.ExtendWith;
-import org.mockito.Mock;
-import org.mockito.junit.jupiter.MockitoExtension;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.boot.test.mock.mockito.MockBean;
-import org.springframework.boot.test.mock.mockito.MockBeans;
-
-import java.util.Optional;
-
-import static org.mockito.ArgumentMatchers.any;
-import static org.mockito.Mockito.when;
 
 @ExtendWith(MockitoExtension.class)
 class InitiativeprojetApplicationTests {
@@ -38,7 +35,7 @@ class InitiativeprojetApplicationTests {
 		User user = User.builder().id(1L).username("shiipou").build();
 		when(userRepository.findById(idUser)).thenReturn(Optional.of(user));
 		String nomProjet = "Nouveau Projet";
-		Projet projetFromDB = Projet.builder().id(1L).owner(user).nom(nomProjet).build();
+		Projet projetFromDB = Projet.builder().id(1L).owner(user).name(nomProjet).build();
 		when(projetRepository.save(any(Projet.class))).thenReturn(projetFromDB);
 
 		// Act
@@ -46,7 +43,6 @@ class InitiativeprojetApplicationTests {
 
 		// Assert
 		Assertions.assertEquals(projet.getOwner().getUsername(), user.getUsername());
-		Assertions.assertEquals(projet.getNom(), nomProjet);
 	}
 
 

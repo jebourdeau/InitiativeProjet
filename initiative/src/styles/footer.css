@@ -3,6 +3,7 @@ text-align: center;
 padding: 1rem;
 background-color: #e7ffcc;
 color: black;
+display: block;
 }
 
 .footer-content a {
@@ -20,7 +21,6 @@ color: black;
 
 .footer-content a:hover .favicon {
     color: #4267B2;
-    /* Couleur de Facebook */
 }
 
 .logo {

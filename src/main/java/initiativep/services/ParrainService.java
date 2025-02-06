@@ -16,11 +16,10 @@ public class ParrainService {
     private ParrainRepository parrainRepository;
 
     public Parrain createParrain(ParrainDto parrainDTO) {
-        Parrain parrain = Parrain.builder()
-                .username(parrainDTO.getName())
+        Parrain parrain = (Parrain) Parrain.builder()
+                .username(parrainDTO.getUsername())
                 .email(parrainDTO.getEmail())
                 .password(parrainDTO.getPassword())
-                .entreprise(parrainDTO.getEntreprise())
                 .build();
         return parrainRepository.save(parrain);
     }
@@ -30,7 +29,7 @@ public class ParrainService {
     }
     public Parrain updateParrain(Long id, ParrainDto parrainDTO){
         Parrain parrain= parrainRepository.findbyIdParrain(id).orElseThrow(()-> new NoSuchElementException("Parrain not found"));
-        parrain.setUsername(parrainDTO.getName());
+        parrain.setUsername(parrainDTO.getUsername());
         parrain.setEmail(parrainDTO.getEmail());
         parrain.setPassword(parrainDTO.getPassword());
         parrain.setEntreprise(parrainDTO.getEntreprise());

@@ -1,5 +1,6 @@
 import logo from "../../assets/img/Nouvelle_Aquitaine-Logo-Reseau_Initiative-RVB_1.webp";
 import "../../styles/footer.css";
+import Chatbox from "./chatbox";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFacebook, faInstagram, faLinkedin } from '@fortawesome/free-brands-svg-icons';
 
@@ -26,8 +27,9 @@ return (
         <span className="réseau">Linkedin</span>
         </a>
     </div>
-    <img src={logo} alt="initiative" className="logo" />
-        <p>© 2024 Initiative Deux Sèvres</p>
+    <a href="https://www.initiative-nouvelleaquitaine.fr/"><img src={logo} alt="initiative" className="logo"/></a>
+        <p>© 2024 Initiative Deux Sèvres, Simplon &hearts; </p>
+        <Chatbox />
     </footer>
 </div>
 );

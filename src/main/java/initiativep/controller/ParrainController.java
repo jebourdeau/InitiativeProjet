@@ -9,25 +9,26 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("/api/parrains")
+@RequestMapping("/api/parrain")
 public class ParrainController {
-
     @Autowired
     private ParrainService parrainService;
 
     @PostMapping
-    public ResponseEntity<Parrain> createParrain(@RequestBody ParrainDto parrainDTO) {
-        Parrain parrain = parrainService.createParrain(parrainDTO);
-        return new ResponseEntity<>(parrain, HttpStatus.CREATED);
+    public ResponseEntity<Parrain> createParrain(@RequestBody ParrainDto parrainDto){
+    Parrain parrain = parrainService.createParrain(parrainDto);
+    return new ResponseEntity<>(parrain, HttpStatus.CREATED);
     }
+
     @DeleteMapping("/{id}")
-    public ResponseEntity<Void> deleteParrain(@PathVariable Long id){
-        parrainService.deleteParrain(id);
-        return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+    public  ResponseEntity<Void> deleteParrain(@PathVariable Long id){
+    parrainService.deleteParrain(id);
+    return new ResponseEntity<>(HttpStatus.NO_CONTENT);
     }
     @PutMapping("/{id}")
-    public ResponseEntity<Parrain> updateParrain(@PathVariable Long id, @RequestBody ParrainDto parrainDto ){
-        Parrain updateParrain = parrainService.updateParrain(id,  parrainDto);
-        return new ResponseEntity<>(updateParrain, HttpStatus.OK);
+    public ResponseEntity<Parrain> updateParrain(@PathVariable Long id, @RequestBody ParrainDto parrainDto){
+     Parrain updateParrain = parrainService.updateParrain(id, parrainDto);
+     return new ResponseEntity<>(updateParrain, HttpStatus.OK);
     }
+
 }

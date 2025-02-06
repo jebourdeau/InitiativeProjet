@@ -43,7 +43,7 @@ return (
     <label title="email">Email:</label>
     <input
         type="email"
-        placeholder="email@email.fr"
+        placeholder="votre-mail@email.fr"
         id="email"
         name="email"
         value={formData.email}
