@@ -16,9 +16,10 @@ public class Projet {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String name;
-    @ManyToOne
-    private User owner;
+    private String title;
+    private String description;
+    private Long userId;
+
     @ManyToMany
     private List<User> membres;
 }
