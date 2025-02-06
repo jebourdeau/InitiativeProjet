@@ -1,6 +1,5 @@
 package Initiative.initiativeprojet.services;
 
-import initiativep.model.Parrain;
 import initiativep.model.Projet;
 import initiativep.model.User;
 import initiativep.repository.ProjetRepository;
@@ -13,7 +12,6 @@ import initiativep.repository.ParrainRepository;
 import initiativep.repository.UserRepository;
 import initiativep.services.ProjetService;
 import org.mockito.junit.jupiter.MockitoExtension;
-import org.springframework.boot.test.context.SpringBootTest;
 
 import java.util.Optional;
 

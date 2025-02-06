@@ -28,7 +28,7 @@ public class AuthController {
     }
     @PostMapping
     public ResponseEntity<Projet> createProjet(@RequestBody ProjetDto projetDTO) {
-        Projet projet = projetService.creationProjet(projetDTO.getIdUser(), projetDTO.getNomProjet(), projetDTO.getMembres());
+        Projet projet = projetService.creationProjet(projetDTO.getId(), projetDTO.getName());
         return new ResponseEntity<>(projet, HttpStatus.CREATED);
     }
     public AuthController(UserService userService, ProjetService projetService){

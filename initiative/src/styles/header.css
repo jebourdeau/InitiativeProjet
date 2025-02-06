@@ -1,14 +1,16 @@
-.App-header{
-    flex-direction: row;
+.App-header {
+    align-items: center;
+    justify-content: center;
 }
-.initiative{
-    max-height: 100px;
-    margin-top: 30px;
-    padding-bottom: 10px;
-}
-
 .match{
-    max-height: 120px;
-    margin-bottom: 20px;
+    max-height: 140px;
+    /* margin-bottom: 20px; */
     padding-bottom: 20px;
+    align-items: center;
+    justify-content: center;
+}
+.backhome{
+    display: flex;
+    justify-content: flex-start;
+    margin: 10px;
 }

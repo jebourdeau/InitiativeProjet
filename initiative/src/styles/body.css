@@ -1,7 +1,9 @@
 body{
-    max-height: 100%;
-    display: flex;
+    max-width: 100%;
+    display: block;
     background-image: url("../assets/img/banniere_page_d_accueil_site_internet.jpg");
     flex: 1;
-    
+    max-height: 100%;
+    background-attachment: fixed;
+    min-height: 100%;
 }
