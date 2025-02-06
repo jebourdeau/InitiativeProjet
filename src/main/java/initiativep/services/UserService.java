@@ -48,4 +48,12 @@ public class UserService{
         return userRepository.save(user);
     }
 
+    public User findById(Long id) {
+        User user= userRepository.findUserById(id).orElseThrow(()-> new RuntimeException("not found"));
+        user.setUsername(user.getUsername());
+        return userRepository.save(user);
+    }
+    public User findUserById(Long id){
+    return userRepository.findById(id).orElse(null);
+    }
 }

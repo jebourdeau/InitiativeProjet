@@ -1,27 +1,42 @@
 package initiativep.dto;
 
-import initiativep.model.User;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
-import java.util.List;
-@Getter
-@Setter
-@AllArgsConstructor
-@NoArgsConstructor
+@Data
 public class ProjetDto {
-    public long getIdUser() {
-        return 0;
+    private Long id;
+    private String name;
+    private String description;
+
+    public ProjetDto(){
+    }
+    public ProjetDto(Long id, String name, String description){
+        this.id = id;
+        this.name = name;
+        this.description = description;
     }
 
-    public String getNomProjet() {
-        return null;
+    public Long getId() {
+        return id;
     }
 
-    public List<User> getMembres() {
-        return null;
+    public void setId(Long id) {
+        this.id = id;
     }
 
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
 }

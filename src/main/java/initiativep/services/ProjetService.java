@@ -43,7 +43,7 @@ public class ProjetService {
     }
     public Projet updateProjet(Long id, ProjetDto projetDto){
         Projet projet = projetRepository.getReferenceById(id);
-        projet.setId(projetDto.getIdUser());
+        projet.setId(projetDto.getId());
         projet.setName(projet.getName());
         return projetRepository.save(projet);
     }
