@@ -22,14 +22,29 @@ const Rendezvous = () => {
         setTime(event.target.value);
     };
 
-    const handleSubmit = (event) => {
+    const handleSubmit = async (event) => {
         event.preventDefault();
-        alert(`Rendez-vous fixé pour le ${selectedDate.toLocaleDateString()} : ${appointment}`);
-        // enregistrer le rendez-vous
+        const newRendezvous={
+            date: selectedDate,
+            time: time,
+            details: appointment,
+        };
+        const response = await fetch('http://localhost:8080/rendezvous',{
+            method:'POST',
+            headers:{
+                'Content-Type':'application/json',
+            },
+            body: JSON.stringify(newRendezvous)
+        });
+        if(response.ok){
         setAppointment('');
         setTime('');
         setSelectedDate(null);
+        }else{
+            alert('Erreur lors de la cration du rendez-vous')
+        }
     };
+    
 return (
         <div>
             <h1>Mon Calendrier Personnalisé</h1>

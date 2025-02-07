@@ -1,4 +1,31 @@
-.login-case{
+form {
+    display: flex;
+    flex-direction: column;
+    max-width: 400px;
+    margin: auto;
+}
+
+div {
+    margin-bottom: 1rem;
+}
+
+label {
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+}
+
+.champ_nom {
+    margin-top: 10px;
+}
+
+input,
+textarea {
+    padding: 0.5rem;
+    font-size: 1rem;
+    margin: 5px;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+}.login-case{
     display: flex;
     align-content: center;
     align-items: center;
@@ -10,7 +37,11 @@
     padding-top: 10px;
 }
 .button_submit{
+    height: 40px;
+    width: 150px;
     background-color: #e31766;
+    font-size: medium ;
+    border-radius: 40px;
 }
 .button_submit:hover {
     background-color: #71c920;
