@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
-
-import './profils.css';
+import '../../../styles/profils.css';
 
 
 // Importez vos images locales
@@ -12,17 +11,17 @@ const profilsData = [
     {
         id: 1,
         photo: photo1,
-        nom: 'Jean Dupont',
-        age: 35,
+        nom: 'Xavier Dupont',
+        age: 53,
         role: 'Entrepreneur',
-        projet: 'Application de gestion de projet'
+        projet: 'Maçonnerie générale, spécialisé dans les terrasses'
     },
     {
         id: 2,
         photo: photo2,
-        nom: 'Marie Curie',
-        age: 40,
-        role: 'Investisseur',
+        nom: 'Greta Thunberg',
+        age: 23,
+        role: 'Investisseuse',
         projet: 'Investissement dans les technologies vertes'
     },
     {
@@ -30,8 +29,8 @@ const profilsData = [
         photo: photo3,
         nom: 'Alice Martin',
         age: 28,
-        role: 'Entrepreneur',
-        projet: 'Plateforme de e-commerce'
+        role: 'Entrepreneuse',
+        projet: 'Plateforme de e-commerce, spécialisé dans les objets insolites'
     },
 ];
 

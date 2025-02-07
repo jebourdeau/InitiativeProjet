@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import emailjs from 'emailjs-com';
+import "../../../styles/login.css";
 
 export const Messagerie = () => {
     const [email, setEmail] = useState('');
@@ -41,7 +42,7 @@ export const Messagerie = () => {
             onChange={(e) => setMessage(e.target.value)}
             required
             />
-            <button type="submit">Envoyer</button>
+            <button className='button_submit' type="submit">Envoyer</button>
         </form>
         </div>
     );

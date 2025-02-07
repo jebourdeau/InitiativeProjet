@@ -12,10 +12,10 @@ export const Registeruser = () => {
         password:""
     });
     const handleChange = (e) =>{
-        const{username, value} = e.target;
+        const{name, value} = e.target;
         setUser({
             ...user,
-            [username]:value
+            [name]:value
         })
     }
     const handleSubmit = async (e)=>{
@@ -45,18 +45,24 @@ export const Registeruser = () => {
                     <input type="email" name="email" value={user.email} onChange={handleChange} required/>
                 </label>
                 <label>
-                    Role:
-                    <input type="text" name="role" value={user.role} onChange={handleChange} required/>
-                </label>
-                <label>
                     Projet:
                     <input type="text" name="projet" value={user.projet} onChange={handleChange} required/>
                 </label>
                 <label>
                     Password:
-                    <input type="text" name="password" value={user.password} onChange={handleChange} required/>
+                    <input type="password" name="password" value={user.password} onChange={handleChange} required/>
                 </label>
-                <button type="submit">S'inscrire</button>
+                <div className="role-selection">
+                    <label>
+                        <input type="radio" name="role" value="porteur de projet" />
+                        Porteur de projet
+                    </label>
+                    <label>
+                        <input type="radio" name="role" value="parrain" />
+                        Parrain
+                    </label>
+                </div>
+                <button className="button_submit" type="submit">S'inscrire</button>
             </form>
             {/* <form className="login-case">
                 <label title="Nom">Nom</label>
