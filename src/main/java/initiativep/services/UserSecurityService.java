@@ -11,13 +11,14 @@ import org.springframework.stereotype.Service;
 import initiativep.model.User;
 
 @Service
-public class UserSecurityService implements UserDetailsService {
+public class UserSecurityService {
     private final UserService userService;
     @Autowired
     public UserSecurityService(UserService userService){
         this.userService = userService;
     }
-    @Override
+
+
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
         User user= User.builder().build();
 

@@ -21,11 +21,7 @@ public class AuthController {
     private final UserService userService;
     @Autowired
     private final ProjetService projetService;
-    @PostMapping
-    public ResponseEntity<Projet> createProjet(@RequestBody ProjetDto projetDTO) {
-        Projet projet = projetService.creationProjet(projetDTO.getId(), projetDTO.getName());
-        return new ResponseEntity<>(projet, HttpStatus.CREATED);
-    }
+
     public AuthController(UserService userService, ProjetService projetService){
         this.userService = userService;
         this.projetService = projetService;

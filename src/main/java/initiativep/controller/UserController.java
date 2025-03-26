@@ -38,21 +38,10 @@ public class UserController {
     public UserDto createUser(@RequestBody UserDto userDto){
         return userService.createUSer(userDto);
     }
-    @DeleteMapping("/{id}")
-    public void deleteUser(@PathVariable Long id) {
-        userService.deleteUser(id);
-    }
-
-    // @DeleteMapping("/{id}")
-    // public ResponseEntity<Void> deleteUser(@PathVariable Long id) {
-    //     userService.deleteUser(id);
-    //     return new ResponseEntity<>(HttpStatus.NO_CONTENT);
-    // }
-
-    // @PutMapping("/{id}")
-    // public ResponseEntity<User> updateUser(@PathVariable Long id, @RequestBody UserDto userDTO) {
-    //     User updatedUser = userService.updateUser(id, userDTO);
-    //     return new ResponseEntity<>(updatedUser, HttpStatus.OK);
-    // }
+     @DeleteMapping("/{id}")
+     public ResponseEntity<Void> deleteUser(@PathVariable Long id) {
+         userService.deleteUser(id);
+         return  ResponseEntity.noContent().build();
+     }
 }
 
